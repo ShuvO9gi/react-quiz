@@ -1,8 +1,10 @@
+import image from "../../assets/images/signup.svg";
 import classes from "../../styles/Signup.module.css";
 import Button from "../Button";
 import Checkbox from "../Checkbox";
 import Form from "../Form";
 import Illustration from "../Illustration";
+import Question from "../Question";
 import TextInput from "../TextInput";
 
 export default function Signup() {
@@ -10,7 +12,7 @@ export default function Signup() {
     <>
       <h1>Create an account</h1>
       <div className="column">
-        <Illustration />
+        <Illustration src={image} alt="Signup" />
         <Form className={`${classes.signup}`}>
           <TextInput type="text" placeholder="Enter name" icon="person" />
           <TextInput
@@ -26,9 +28,11 @@ export default function Signup() {
           />
           <Checkbox text="I agree to the Terms &amp; Conditions" />
           <Button>Submit Now</Button>
-          <div className="info">
-            Already have an account? <a href="login.html">Login</a> instead.
-          </div>
+          <Question
+            text1="Already have an account?"
+            text2="Login"
+            href="login.html"
+          />
         </Form>
       </div>
     </>
