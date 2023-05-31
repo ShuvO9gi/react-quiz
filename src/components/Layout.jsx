@@ -1,7 +1,7 @@
 import classes from "../styles/Layout.module.css";
 import { Nav } from "./Nav";
 
-export function Layout({ children }) {
+export default function Layout({ children }) {
   return (
     <>
       <Nav />
