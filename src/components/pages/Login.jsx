@@ -3,7 +3,7 @@ import classes from "../../styles/Login.module.css";
 import Button from "../Button";
 import Form from "../Form";
 import Illustration from "../Illustration";
-import Question from "../Question";
+import Query from "../Query";
 import TextInput from "../TextInput";
 
 export default function Login() {
@@ -19,8 +19,10 @@ export default function Login() {
             icon="alternate_email"
           />
           <TextInput type="password" placeholder="Enter password" icon="lock" />
-          <Button>Submit Now</Button>
-          <Question
+          <Button>
+            <span>Submit Now</span>
+          </Button>
+          <Query
             text1="Don't have an account?"
             text2="Signup"
             href="signup.html"

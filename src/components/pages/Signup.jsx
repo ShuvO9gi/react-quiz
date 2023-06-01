@@ -4,7 +4,7 @@ import Button from "../Button";
 import Checkbox from "../Checkbox";
 import Form from "../Form";
 import Illustration from "../Illustration";
-import Question from "../Question";
+import Query from "../Query";
 import TextInput from "../TextInput";
 
 export default function Signup() {
@@ -27,8 +27,10 @@ export default function Signup() {
             icon="lock_clock"
           />
           <Checkbox text="I agree to the Terms &amp; Conditions" />
-          <Button>Submit Now</Button>
-          <Question
+          <Button>
+            <span>Submit Now</span>
+          </Button>
+          <Query
             text1="Already have an account?"
             text2="Login"
             href="login.html"
