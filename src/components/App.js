@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AuthProvider } from "../context/AuthContext";
 import "../styles/Global.css";
 import Layout from "./Layout";
 import Home from "./pages/Home";
@@ -9,9 +10,9 @@ import Signup from "./pages/Signup";
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <BrowserRouter>
+    <div className="App">
+      <BrowserRouter>
+        <AuthProvider>
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -21,9 +22,9 @@ function App() {
               <Route path="/result" element={<Result />} />
             </Routes>
           </Layout>
-        </BrowserRouter>
-      </div>
-    </>
+        </AuthProvider>
+      </BrowserRouter>
+    </div>
   );
 }
 
