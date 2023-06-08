@@ -12,17 +12,3 @@ const app = initializeApp({
 });
 
 export default app;
-
-/* import { initializeApp } from "firebase/app";
-
-//firebase configuration
-const app = initializeApp({
-  apiKey: "AIzaSyDhDCIAnIRHKk5xB5Ri6u3iFGwM5GTsLkc",
-  authDomain: "react-quiz-dev-2fc62.firebaseapp.com",
-  projectId: "react-quiz-dev-2fc62",
-  storageBucket: "react-quiz-dev-2fc62.appspot.com",
-  messagingSenderId: "854005127014",
-  appId: "1:854005127014:web:210334d43ebe1b91355aa7",
-});
-
-export default app; */

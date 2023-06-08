@@ -15,13 +15,13 @@ export default function LoginForm() {
   const navigate = useNavigate();
   const { login } = useAuth();
 
-  function handleLogin(e) {
+  async function handleLogin(e) {
     e.preventDefault();
 
     try {
       setError("");
       setLoading(true);
-      login(email, password);
+      await login(email, password);
       navigate("/");
     } catch (err) {
       console.log(err);
