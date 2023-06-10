@@ -1,35 +1,38 @@
+import { Fragment } from "react";
 import classes from "../styles/Answers.module.css";
 import Checkbox from "./Checkbox";
 
-export default function Answers() {
+export default function Answers({ options = [], handleChange, input }) {
   return (
-    <>
-      <div className={classes.answers}>
-        <Checkbox
-          text="A New Hope 1"
-          l_for="option1"
-          id="option1"
-          className={classes.answer}
-        />
-        <Checkbox
-          text="A New Hope 2"
-          l_for="option2"
-          id="option2"
-          className={classes.answer}
-        />
-        <Checkbox
-          text="A New Hope 3"
-          l_for="option3"
-          id="option3"
-          className={classes.answer}
-        />
-        <Checkbox
-          text="A New Hope 4"
-          l_for="option4"
-          id="option4"
-          className={classes.answer}
-        />
-      </div>
-    </>
+    <div className={classes.answers}>
+      {options.map((option, index) => (
+        <Fragment key={index}>
+          {input ? (
+            <Checkbox
+              className={classes.answer}
+              key={index}
+              text={option.title}
+              value={index}
+              checked={option.checked}
+              onChange={(e) => handleChange(e, index)}
+            />
+          ) : (
+            <Checkbox
+              className={`${classes.answer} ${
+                option.correct
+                  ? classes.correct
+                  : option.checked
+                  ? classes.wrong
+                  : null
+              }`}
+              key={index}
+              text={option.title}
+              defaultChecked={option.checked}
+              disabled
+            />
+          )}
+        </Fragment>
+      ))}
+    </div>
   );
 }

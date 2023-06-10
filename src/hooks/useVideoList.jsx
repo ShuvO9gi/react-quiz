@@ -19,9 +19,9 @@ export default function useVideoList(page) {
     async function fetchVideo() {
       //database related works
       const db = getDatabase();
-      console.log(db);
+      //console.log(db);
       const videoRef = ref(db, "videos");
-      console.log(videoRef);
+      //console.log(videoRef);
       const videoQuery = query(
         videoRef,
         orderByKey(),
@@ -35,7 +35,7 @@ export default function useVideoList(page) {
         //request firebase data
         const snapshot = await get(videoQuery);
         setLoading(false);
-        console.log(snapshot);
+        console.log(snapshot.val());
         if (snapshot.exists()) {
           setVideos((prevVideo) => {
             return [...prevVideo, ...Object.values(snapshot.val())];
@@ -50,6 +50,7 @@ export default function useVideoList(page) {
       }
     }
 
+    /* setTimeout(() => fetchVideo(), 2000); //delaying the loading data for visibility */
     fetchVideo();
   }, [page]);
 
