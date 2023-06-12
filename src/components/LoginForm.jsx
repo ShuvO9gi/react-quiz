@@ -8,7 +8,7 @@ import TextInput from "./TextInput";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState();
   const [error, setError] = useState();
 
@@ -34,6 +34,7 @@ export default function LoginForm() {
     <Form style={{ height: "330px" }} onSubmit={handleLogin}>
       <TextInput
         type="text"
+        required
         placeholder="Enter email"
         icon="alternate_email"
         value={email}
@@ -41,12 +42,13 @@ export default function LoginForm() {
       />
       <TextInput
         type="password"
+        required
         placeholder="Enter password"
         icon="lock"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Button disabled={loading} type="button">
+      <Button disabled={loading} type="submit">
         <span>Submit Now</span>
       </Button>
       {error && <p className="error">{error}</p>}

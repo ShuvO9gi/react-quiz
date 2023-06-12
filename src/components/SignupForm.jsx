@@ -9,10 +9,10 @@ import TextInput from "./TextInput";
 
 export default function SignupForm() {
   const [username, setUserName] = useState("");
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [confirmPassword, setConfirmPassword] = useState();
-  const [agree, setAgree] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [agree, setAgree] = useState("");
   const [error, setError] = useState();
   const [loading, setLoading] = useState();
 
@@ -43,6 +43,7 @@ export default function SignupForm() {
     <Form style={{ height: "500px" }} onSubmit={handleSubmit}>
       <TextInput
         type="text"
+        required
         placeholder="Enter name"
         icon="person"
         value={username}
@@ -50,6 +51,7 @@ export default function SignupForm() {
       />
       <TextInput
         type="text"
+        required
         placeholder="Enter email"
         icon="alternate_email"
         value={email}
@@ -57,6 +59,7 @@ export default function SignupForm() {
       />
       <TextInput
         type="password"
+        required
         placeholder="Enter password"
         icon="lock"
         value={password}
@@ -64,6 +67,7 @@ export default function SignupForm() {
       />
       <TextInput
         type="password"
+        required
         placeholder="Confirm password"
         icon="lock_clock"
         value={confirmPassword}
@@ -71,6 +75,7 @@ export default function SignupForm() {
       />
       <Checkbox
         text="I agree to the Terms &amp; Conditions"
+        required
         value={agree}
         onChange={(e) => setAgree(e.target.value)}
       />
