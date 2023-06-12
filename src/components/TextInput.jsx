@@ -5,7 +5,7 @@ export default function TextInput({ icon, ...rest /* (type, placeholder) */ }) {
     <>
       <div class={classes.textInput}>
         <input {...rest} /* type={type} placeholder={placeholder} */ />
-        <span class="material-icons-outlined">{icon}</span>
+        <span className="material-icons-outlined">{icon}</span>
       </div>
     </>
   );
